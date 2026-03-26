@@ -1,0 +1,1 @@
+{"status":"ok","app":"Phishing Guard","version":"2.0.0"}

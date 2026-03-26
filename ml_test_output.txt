@@ -1,0 +1,17 @@
+Initializing TextAnalyzer...
+Model loaded successfully. Running tests...
+
+Test Case 1:
+Text: 'Dear customer, your account has been suspended. Please click here to verify your identity.'
+Result: Phishing (Confidence: 98.97%)
+----------------------------------------
+
+Test Case 2:
+Text: 'Hey team, attached is the sprint planning document for next week. Let me know if you have any questions.'
+Result: Legitimate (Confidence: 6.62%)
+----------------------------------------
+
+Test Case 3:
+Text: 'URGENT: WINNER WINNER! You have won a $1000 gift card. Claim now at http://fake-website.com/claim'
+Result: Phishing (Confidence: 99.77%)
+----------------------------------------
