@@ -27,3 +27,5 @@ docker-compose.override.yml
 Thumbs.db
 
 *.csv
+
+.agent/

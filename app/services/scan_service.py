@@ -13,6 +13,7 @@ from sqlalchemy.orm import Session
 from app.models.email import Email
 from app.models.scan import Scan, Verdict, ScanStatus, Classification
 from app.engines.text_analyzer import get_text_analyzer
+from app.engines.attachment_analyzer import AttachmentAnalyzer
 
 logger = logging.getLogger(__name__)
 
@@ -27,12 +28,12 @@ class ScanService:
         """
         Execute a full scan on an email.
 
-        Currently runs:
-            1. ML Text Analysis (AI score)
+        Runs:
+            1. ML Text Analysis    → ai_score
+            2. Attachment Analysis → attachment_score  (file engine)
 
-        Future engines (not yet wired):
-            2. URL Analysis → url_score
-            3. Attachment Analysis → attachment_score
+        Future engines:
+            3. URL Analysis        → url_score         (not yet wired)
         """
         # Create scan record
         scan = Scan(
@@ -54,11 +55,14 @@ class ScanService:
             ai_score = ai_result.confidence
             ai_label = ai_result.label
 
-            # ── 2. URL Analysis (placeholder) ────────────
+            # ── 2. URL Analysis (placeholder) ──────────────────
             url_score = 0.0
 
-            # ── 3. Attachment Analysis (placeholder) ─────
-            attachment_score = 0.0
+            # ── 3. Attachment Analysis ─────────────────────────
+            attachment_analyzer = AttachmentAnalyzer()
+            # Load the attachment ORM objects (already in session via email.attachments)
+            att_result = attachment_analyzer.analyze(email.attachments)
+            attachment_score = att_result.attachment_score
 
             # ── 4. Compute Final Verdict ─────────────────
             final_score = self._compute_final_score(
@@ -82,7 +86,13 @@ class ScanService:
                         "is_phishing": ai_result.is_phishing,
                     },
                     "url": {"score": url_score, "note": "Not yet implemented"},
-                    "attachment": {"score": attachment_score, "note": "Not yet implemented"},
+                    "attachment": {
+                        "score": att_result.attachment_score,
+                        "total_files": att_result.total_files,
+                        "analyzed_files": att_result.analyzed_files,
+                        "high_risk_files": att_result.high_risk_files,
+                        "per_file": att_result.per_file_results,
+                    },
                 },
             )
             self.db.add(verdict)

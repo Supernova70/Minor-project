@@ -20,16 +20,24 @@ dependencies = [
     "imapclient>=3.0.0",
     "beautifulsoup4>=4.12.0",
     "pytest>=8.0.0",
+    # ── Attachment analysis libraries (Phase 6) ──────────
+    "pefile>=2023.2.7",       # PE/EXE static analysis
+    "olefile>=0.47",           # Legacy Office OLE analysis
+    "PyPDF2>=3.0.0",           # PDF object tree analysis
+    "python-magic>=0.4.27",   # MIME type detection (Linux/Docker — requires libmagic1)
+    "yara-python>=4.5.0",     # YARA pattern matching (requires libyara-dev)
 ]
 
 [project.optional-dependencies]
-# Attachment analysis (Phase 6 — deferred)
-analysis = [
+# Windows local development: install python-magic-bin instead of python-magic
+# to get the libmagic DLL bundled automatically.
+# Run: pip install python-magic-bin
+windows-dev = [
     "python-magic-bin>=0.4.14",
-    "pefile>=2023.2.7",
-    "olefile>=0.47",
-    "yara-python>=4.5.0",
-    "PyPDF2>=3.0.0",
+]
+# Future additions (not yet enabled)
+extras = [
+    # yara-python is now in main deps — moved when YARA engine was implemented
 ]
 # ML model training
 ml = [

@@ -40,6 +40,15 @@ class Settings(BaseSettings):
     ATTACHMENT_DIR: str = "/app/uploads"
     MODEL_PATH: str = "/app/data/phishing_model.joblib"
 
+    # ── Attachment Engine ────────────────────────────────
+    # Maximum file size (bytes) the attachment engine will read into memory.
+    # Files exceeding this are skipped and flagged in the breakdown.
+    MAX_ATTACHMENT_BYTES: int = 52_428_800  # 50 MB
+
+    # Set to True once app/integrations/virustotal.py is wired up.
+    # When False, attachment analysis runs static-only (no VT hash lookups).
+    ENABLE_VT_HASH_LOOKUP: bool = False
+
     model_config = {
         "env_file": ".env",
         "env_file_encoding": "utf-8",

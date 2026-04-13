@@ -1,0 +1,242 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": 20
+  },
+  "files": {},
+  "elements": [
+    {
+      "type": "text",
+      "id": "title_current",
+      "x": 50, "y": 20, "width": 400, "height": 30,
+      "text": "Current Architecture: ML-Only Email Scan",
+      "originalText": "Current Architecture: ML-Only Email Scan",
+      "fontSize": 24, "fontFamily": 3,
+      "textAlign": "left", "verticalAlign": "top",
+      "strokeColor": "#1e40af", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 1, "version": 1, "versionNonce": 1,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "lineHeight": 1.25
+    },
+    {
+      "type": "ellipse",
+      "id": "imap_src",
+      "x": 50, "y": 100, "width": 120, "height": 90,
+      "strokeColor": "#c2410c", "backgroundColor": "#fed7aa",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 2, "version": 1, "versionNonce": 2,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [
+        {"id": "text_imap", "type": "text"}
+      ],
+      "link": null, "locked": false
+    },
+    {
+      "type": "text",
+      "id": "text_imap",
+      "x": 75, "y": 133, "width": 70, "height": 25,
+      "text": "IMAP Server",
+      "originalText": "IMAP Server",
+      "fontSize": 16, "fontFamily": 3,
+      "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#374151", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 3, "version": 1, "versionNonce": 3,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "containerId": "imap_src", "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle",
+      "id": "fastapi_app",
+      "x": 250, "y": 100, "width": 180, "height": 90,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#3b82f6",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 4, "version": 1, "versionNonce": 4,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [
+        {"id": "text_fastapi", "type": "text"}
+      ],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text",
+      "id": "text_fastapi",
+      "x": 280, "y": 120, "width": 120, "height": 50,
+      "text": "FastAPI App\n(Fetch Service)",
+      "originalText": "FastAPI App\n(Fetch Service)",
+      "fontSize": 16, "fontFamily": 3,
+      "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#ffffff", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 5, "version": 1, "versionNonce": 5,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "containerId": "fastapi_app", "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle",
+      "id": "postgres_db",
+      "x": 250, "y": 300, "width": 180, "height": 90,
+      "strokeColor": "#047857", "backgroundColor": "#a7f3d0",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 6, "version": 1, "versionNonce": 6,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [
+        {"id": "text_postgres", "type": "text"}
+      ],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text",
+      "id": "text_postgres",
+      "x": 285, "y": 320, "width": 110, "height": 50,
+      "text": "PostgreSQL DB\n(Emails/Verdicts)",
+      "originalText": "PostgreSQL DB\n(Emails/Verdicts)",
+      "fontSize": 16, "fontFamily": 3,
+      "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#374151", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 7, "version": 1, "versionNonce": 7,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "containerId": "postgres_db", "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle",
+      "id": "scan_svc",
+      "x": 500, "y": 100, "width": 180, "height": 90,
+      "strokeColor": "#1e3a5f", "backgroundColor": "#3b82f6",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 8, "version": 1, "versionNonce": 8,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [
+        {"id": "text_scan", "type": "text"}
+      ],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text",
+      "id": "text_scan",
+      "x": 530, "y": 120, "width": 120, "height": 50,
+      "text": "Scan Service\n(Orchestrator)",
+      "originalText": "Scan Service\n(Orchestrator)",
+      "fontSize": 16, "fontFamily": 3,
+      "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#ffffff", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 9, "version": 1, "versionNonce": 9,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "containerId": "scan_svc", "lineHeight": 1.25
+    },
+    {
+      "type": "rectangle",
+      "id": "ml_engine",
+      "x": 750, "y": 100, "width": 180, "height": 90,
+      "strokeColor": "#6d28d9", "backgroundColor": "#ddd6fe",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 10, "version": 1, "versionNonce": 10,
+      "isDeleted": false, "groupIds": [],
+      "boundElements": [
+        {"id": "text_ml", "type": "text"}
+      ],
+      "link": null, "locked": false, "roundness": {"type": 3}
+    },
+    {
+      "type": "text",
+      "id": "text_ml",
+      "x": 780, "y": 120, "width": 120, "height": 50,
+      "text": "ML Text Analyzer\n(Scikit-Learn)",
+      "originalText": "ML Text Analyzer\n(Scikit-Learn)",
+      "fontSize": 16, "fontFamily": 3,
+      "textAlign": "center", "verticalAlign": "middle",
+      "strokeColor": "#ffffff", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 11, "version": 1, "versionNonce": 11,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "containerId": "ml_engine", "lineHeight": 1.25
+    },
+    {
+      "type": "arrow",
+      "id": "arr1",
+      "x": 170, "y": 145, "width": 80, "height": 0,
+      "strokeColor": "#c2410c", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 12, "version": 1, "versionNonce": 12,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "points": [[0, 0], [80, 0]],
+      "startBinding": {"elementId": "imap_src", "focus": -0.5, "gap": 5},
+      "endBinding": {"elementId": "fastapi_app", "focus": 0, "gap": 5},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr2",
+      "x": 340, "y": 190, "width": 0, "height": 110,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 13, "version": 1, "versionNonce": 13,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "points": [[0, 0], [0, 110]],
+      "startBinding": {"elementId": "fastapi_app", "focus": -0.5, "gap": 5},
+      "endBinding": {"elementId": "postgres_db", "focus": -0.5, "gap": 5},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr3",
+      "x": 430, "y": 145, "width": 70, "height": 0,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 14, "version": 1, "versionNonce": 14,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "points": [[0, 0], [70, 0]],
+      "startBinding": {"elementId": "fastapi_app", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "scan_svc", "focus": 0, "gap": 5},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr4",
+      "x": 680, "y": 145, "width": 70, "height": 0,
+      "strokeColor": "#1e3a5f", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 15, "version": 1, "versionNonce": 15,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "points": [[0, 0], [70, 0]],
+      "startBinding": {"elementId": "scan_svc", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "ml_engine", "focus": 0, "gap": 5},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arr5",
+      "x": 840, "y": 190, "width": -410, "height": 130,
+      "strokeColor": "#6d28d9", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid",
+      "roughness": 0, "opacity": 100, "angle": 0,
+      "seed": 16, "version": 1, "versionNonce": 16,
+      "isDeleted": false, "groupIds": [], "boundElements": null, "link": null, "locked": false,
+      "points": [[0, 0], [0, 130], [-410, 130]],
+      "startBinding": {"elementId": "ml_engine", "focus": 0, "gap": 5},
+      "endBinding": {"elementId": "postgres_db", "focus": 0, "gap": 5},
+      "startArrowhead": null, "endArrowhead": "arrow"
+    }
+  ]
+}
