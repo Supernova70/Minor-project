@@ -176,11 +176,11 @@ class EmailService:
             ).hexdigest()[:64]
 
         return {
-            "message_id": raw_msg_id,
-            "sender": msg.get("From", "Unknown"),
-            "subject": msg.get("Subject", "No Subject"),
-            "date": str(msg.get("Date", "")),
-            "to_address": msg.get("To", ""),
+            "message_id": raw_msg_id[:512],
+            "sender": str(msg.get("From", "Unknown"))[:512],
+            "subject": str(msg.get("Subject", "No Subject"))[:1024],
+            "date": str(msg.get("Date", ""))[:256],
+            "to_address": str(msg.get("To", ""))[:512],
             "body_html": html_body,
             "body_text": text_body,
             "has_html": html_body is not None,
