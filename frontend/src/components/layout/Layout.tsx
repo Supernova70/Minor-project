@@ -68,7 +68,7 @@ export function Layout() {
             >
               <WifiOff size={14} style={{ color: 'var(--danger)' }} />
               <span style={{ fontSize: '0.8rem', color: 'var(--text-danger)', fontWeight: 600 }}>
-                Backend Offline — API at http://localhost:8000 is not responding
+                Backend Offline — API at http://127.0.0.1:8080 is not responding
               </span>
             </motion.div>
           )}
